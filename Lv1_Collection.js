@@ -36,3 +36,19 @@ function solution(absolutes, signs) {
   return absolutes.reduce((acc, val, i) => acc + (val * (signs[i] ? 1 : -1)), 0);
 }
 solution([11,41,22,3],[true,true,false,false])
+
+
+/*
+# 문자열 다루기 기본
+문제 설명
+문자열 s의 길이가 4 혹은 6이고, 숫자로만 구성돼있는지 확인해주는 함수, solution을 완성하세요. 
+예를 들어 s가 "a234"이면 False를 리턴하고 "1234"라면 True를 리턴하면 됩니다.
+ 
+정규 표현식을 사용해서 숫자만 있는지 검사 + search 메서드
+search -> 첫 번쨰로 매치되는 것의 인덱스를 반환, 없으면 -1
+*/
+
+function solution(s) {
+  let a=s.search(/\D/g)
+  return a < 0 && (s.length===4 || s.length ===6)
+}
