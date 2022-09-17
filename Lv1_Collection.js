@@ -83,3 +83,25 @@ function solution(s) {
     )
     .join(" ")
 }
+/*
+진법 변환하는 법 : 
+let value = 10;
+// 10진법 -> 2
+value.toString(2); // 1010
+toString안에 바꾸고 싶은 진법을 넣어주면 끝
+
+반대로 10진법으로 만들 때
+let bin = 1010,
+    oct = 112,
+    hex = 'a';
+Number.parseInt(bin, 2);    
+Number.parseInt(oct, 8);    
+Number.parseInt(hex, 16);   
+*/
+function solution(n) {
+  let t=n.toString(3).split("").reverse().join("")
+  return parseInt(t,3)
+}
+
+solution(45)
+
