@@ -52,3 +52,34 @@ function solution(s) {
   let a=s.search(/\D/g)
   return a < 0 && (s.length===4 || s.length ===6)
 }
+
+/*
+이상한 문자 만들기
+문제 설명
+문자열 s는 한 개 이상의 단어로 구성되어 있습니다. 각 단어는 하나 이상의 공백문자로 구분되어 있습니다.
+각 단어의 짝수번째 알파벳은 대문자로, 홀수번째 알파벳은 소문자로 바꾼 문자열을 리턴하는 함수, solution을 완성하세요.
+
+문자열 전체의 짝/홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝/홀수 인덱스를 판단해야합니다. -> 이 의미가 공백이 되면 인데스가 다시 0이 된다는 소리
+
+*/
+//첫번째 풀이 -> 테스트를 돌려보면 18점.. 이유는 제한사항에 공백을 기준으로 짝/홀 인덱스 판단조건 때문인것 같다
+function solution(s) {
+  let text=s.split('')
+  let k=text.map((x,idx)=>idx%2===0? x.toUpperCase():x.toLowerCase()).join('')
+  console.log(k);
+  solution("try hello world")
+}
+
+/*두번째 풀이 (복습 필요) split(" ") -> 문자열이 배열로 변함 ( 공백은 " " 이런식으로 배열에 들어가있음)
+아래 메서들을 따로따로 선언하면 안됨 map((w)=>w.split("").map 이 부분에서 배열로 나눠진 단어중에 첫번째 단어부터 하나씩 -> idx와 같이 순서대로 증가하다가
+중간에 공백을 만나면 idx 초기화 됨
+*/
+function solution(s) {
+    return s.split(" ")
+    .map((w)=>w.split("").map((x,idx)=>(
+    idx%2===0? x.toUpperCase():x.toLowerCase()
+    )
+    ).join("")
+    )
+    .join(" ")
+}
