@@ -15,7 +15,9 @@
 
 ## https://leetcode.com/study-plan/leetcode-75/?progress=xo2xk0fs
 
-### Only commit that I can't solve it right away
+## https://leetcode.com/problem-list/top-100-liked-questions/
+
+### Commit Solutions
 
 - Start 22-09-19
-- (Goal)End 22-09-30
+
