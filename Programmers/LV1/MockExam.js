@@ -1,4 +1,4 @@
-
+// 모의고사 https://school.programmers.co.kr/learn/courses/30/lessons/42840
 function solution(answers) {
   const ex1=[1,2,3,4,5]
   const ex2=[2,1,2,3,2,4,2,5]
