@@ -1,9 +1,6 @@
-### Only commit that I can't solve it right away
+# Programmers
 
--JavaScript
-
-***
-
+## LV1~LV3
 
 # LeetCode
 
