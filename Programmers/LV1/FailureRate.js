@@ -1,23 +1,14 @@
 function solution(N, stages) {
   stages.sort()
-  let count={}
-  stages.forEach((i)=>{
-    count[i]=(count[i]||0)+1
-  })
-  let total=stages.length
-  let percent=[]
-  for (const i in count) {
-    let calculate=count[i]/total
-    percent.push({i,calculate})
-    total-=count[i]
+  let res=[]
+  for (let i = 1; i <= N; i++) {
+    const final=stages.filter((e)=>e>=i).length
+    const current=stages.filter((e)=>e===i).length
+    res.push([i,current/final])
   }
-  percent.sort((a,b)=>{
-    if(a.calculate===b.calculate){
-      return a.i-b.i
-    }
-    return b.calculate-a.calculate
-  })
-  console.log(percent);
+  res.sort((a,b)=>b[1]-a[1])
+  return res.map((i)=>i[0])
 }
 
 solution(5,[2, 1, 2, 6, 2, 4, 3, 3])
+// solution(4,[4,4,4,4,4])
