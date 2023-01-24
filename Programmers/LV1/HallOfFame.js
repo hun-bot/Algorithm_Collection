@@ -1,5 +1,4 @@
 function solution(k, score) {
-  let len = score.length;
   let fame = [];
   let res = [];
   let min=-1
@@ -17,8 +16,8 @@ function solution(k, score) {
         res.push(min)
       }
       else if(point<min){
-        let newMin=Math.min(...fame)
-        res.push(newMin)
+        min=Math.min(...fame)
+        res.push(min)
       }
       else{
         res.push(point)
@@ -30,6 +29,3 @@ function solution(k, score) {
   })
   return res
 }
-
-// solution(3, [10, 100, 20, 150, 1, 100, 200]);
-solution(4,[0, 300, 40, 300, 20, 70, 150, 50, 500, 1000]	)
