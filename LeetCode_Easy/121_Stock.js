@@ -10,6 +10,16 @@ var maxProfit = function(prices) {
 };
 //nice solution
 var maxProfit = function(prices) {
+  let maxProf = 0, curr = prices[0];
+  
+  for(let x of prices) {
+      if(curr < x) maxProf = Math.max(maxProf, x - curr);
+      else curr = x;
+  }
+  return maxProf;
+};
+
+var maxProfit = function(prices) {
   let min = prices[0], profit = 0;
 
   for (const x of prices) {
