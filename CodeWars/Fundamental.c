@@ -15,3 +15,14 @@ size_t count_sheep(const bool *sheep, size_t count){
     for(int i=0; i < count; i++) sum += sheep[i];
     return sum;
 }
+
+#include <stddef.h>
+
+void count_positives_sum_negatives(
+  int *values, size_t count, int *positivesCount, int *negativesSum) 
+{
+  for(int i=0;i<count;i++){
+    if(values[i]>0) *positivesCount+=1;
+    else *negativesSum+=values[i];
+  }
+}  
